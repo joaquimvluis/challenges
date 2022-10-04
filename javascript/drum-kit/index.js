@@ -2,8 +2,15 @@ document.querySelectorAll("button").forEach(element => element.addEventListener(
 
 function handleClick() {
   const button = this.innerHTML;
+  makeSound(button);
+}
 
-  switch (button) {
+document.addEventListener('keydown', function (event) {
+  makeSound(event.key)
+})
+
+function makeSound(key) {
+  switch (key) {
     case "w":
       var snare = new Audio('sounds/snare.mp3');
       snare.play();
